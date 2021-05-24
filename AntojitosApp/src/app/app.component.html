@@ -1,0 +1,33 @@
+<div class="container">
+  
+  <!-- <nav>
+    <a routerLink="/cliente-comp" routerLinkActive="active">Administrar Clientes</a>
+    <a routerLink="/producto-comp" routerLinkActive="active">Administrar Productos</a>
+  </nav> -->
+
+  <h1 class="d-flex justify-content-center">Antojitos Manager </h1>
+    
+  <nav class="navbar navbar-expand-sm bg-light navbar-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <button routerLink="/ventas-comp"
+        class="m-1 btn btn-light btn-outline-primary" Button>Registrar Ventas</button>
+      </li>
+
+      <li class="nav-item">
+        <button routerLink="/cliente-comp"
+        class="m-1 btn btn-light btn-outline-primary" Button>Administrar Clientes</button>
+      </li>
+
+      <li class="nav-item">
+        <button routerLink="/producto-comp"
+        class="m-1 btn btn-light btn-outline-primary" Button>Administrar Productos</button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- <app-detalles-clientes></app-detalles-clientes> -->
+  <!-- <app-detalles-productos></app-detalles-productos> -->
+
+  <router-outlet></router-outlet>
+</div>

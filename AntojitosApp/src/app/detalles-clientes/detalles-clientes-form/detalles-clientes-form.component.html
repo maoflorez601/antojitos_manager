@@ -1,0 +1,48 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="IdCliente"
+    [value]="service.formData.IdCliente" />
+
+    <div class="form-group">
+        <label>IDENTIFICACION</label>
+        <input class="form-control form-control-lg" placeholder="Identificacion del cliente"
+        name="identifiacion" #identificacion="ngModel" [(ngModel)]="service.formData.Identifiacion"
+        required>
+    </div>
+
+    <div class="form-group">
+        <label>NOMBRE</label>
+        <input class="form-control form-control-lg" placeholder="Nombres del cliente"
+        name="nombres" #nombres="ngModel" [(ngModel)]="service.formData.Nombres" required> 
+    </div>
+
+    <div class="form-group">
+        <label>APELLIDOS</label>
+        <input class="form-control form-control-lg" placeholder="Apellidos del cliente"
+        name="apellidos" #apellidos="ngModel" [(ngModel)]="service.formData.Apellidos" required> 
+    </div>
+
+    <div class="form-group">
+        <label>DIRECCIÓN</label>
+        <input class="form-control form-control-lg" placeholder="Direccción del cliente"
+        name="direccion" #direccion="ngModel" [(ngModel)]="service.formData.Direccion" required> 
+    </div>
+
+    <div class="form-group">
+        <label>TELEFONO</label>
+        <input class="form-control form-control-lg" placeholder="Telefono del cliente"
+        name="telefono" #telefono="ngModel" [(ngModel)]="service.formData.Telefono"> 
+    </div>
+
+    <div class="form-group">
+        <label>EMAIL</label>
+        <input class="form-control form-control-lg" placeholder="Email del cliente"
+        name="email" #email="ngModel" [(ngModel)]="service.formData.Email"> 
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">
+            Registrar
+        </button>
+    </div>
+    
+</form>

@@ -1,0 +1,39 @@
+<div class="jumbotron py-3">
+    <h1 class="display-4 text-center">Administración de Clientes</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <app-detalles-clientes-form></app-detalles-clientes-form>
+    </div>
+    <div class="col-md-6">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Identificacion</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                    <th>Email</th>
+                    <th></th>
+                </tr>
+                
+            </thead>
+            <tbody>
+                <tr *ngFor="let cliente of service.list">
+                    <td (click)="populateForm(cliente)">{{ cliente.Identifiacion }}</td>
+                    <td (click)="populateForm(cliente)">{{ cliente.Nombres }}</td>
+                    <td (click)="populateForm(cliente)">{{ cliente.Apellidos }}</td>
+                    <td (click)="populateForm(cliente)">{{ cliente.Telefono }}</td>
+                    <td (click)="populateForm(cliente)">{{ cliente.Email }}</td>                    
+                    <td>
+                        <i class="far  fa-trash-alt fa-lg text-danger" (click)="onDelete(cliente.IdCliente)"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

@@ -1,0 +1,36 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="IdProducto"
+    [value]="service.detalleProducto.IdProducto" />
+
+    <div class="form-group">
+        <label>CODIGO</label>
+        <input class="form-control form-control-lg" placeholder="Código del producto"
+        name="codigo" #identificacion="ngModel" [(ngModel)]="service.detalleProducto.Codigo"
+        required>
+    </div>
+
+    <div class="form-group">
+        <label>NOMBRE</label>
+        <input class="form-control form-control-lg" placeholder="Nombres del cliente"
+        name="nombre" #nombres="ngModel" [(ngModel)]="service.detalleProducto.Nombre" required> 
+    </div>
+
+    <div class="form-group">
+        <label>VALOR PRODUCTO</label>
+        <input class="form-control form-control-lg" placeholder="Apellidos del cliente"
+        name="valor" #apellidos="ngModel" [(ngModel)]="service.detalleProducto.ValorUnidad" required> 
+    </div>
+
+    <div class="form-group">
+        <label>CANTIDAD EN STOCK</label>
+        <input class="form-control form-control-lg" placeholder="Direccción del cliente"
+        name="stock" #direccion="ngModel" [(ngModel)]="service.detalleProducto.Stock" required> 
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">
+            Registrar
+        </button>
+    </div>
+    
+</form>

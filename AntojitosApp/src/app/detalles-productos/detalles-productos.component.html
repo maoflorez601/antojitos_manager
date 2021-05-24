@@ -1,0 +1,35 @@
+
+<div class="jumbotron py-3">
+    <h1 class="display-4 text-center">Administración de Productos</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <app-detalles-productos-form></app-detalles-productos-form>
+    </div>
+    <div class="col-md-6">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Valor</th>
+                    <th>Cantidad</th>
+                    <th></th>
+                </tr>
+                
+            </thead>
+            <tbody>
+                <tr *ngFor="let producto of service.list">
+                    <td (click)="populateForm(producto)">{{ producto.Codigo }}</td>
+                    <td (click)="populateForm(producto)">{{ producto.Nombre }}</td>
+                    <td (click)="populateForm(producto)">{{ producto.ValorUnidad }}</td>
+                    <td (click)="populateForm(producto)">{{ producto.Stock }}</td>                 
+                    <td>
+                        <i class="far  fa-trash-alt fa-lg text-danger" (click)="onDelete(producto.IdProducto)"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
