@@ -59,6 +59,5 @@ export class DetallesVentasComponent implements OnInit {
       },
       err =>  { console.log(err); }
     );
-    this.serviceVenta.generarVenta();
   }
 }

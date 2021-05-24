@@ -12,10 +12,10 @@ export class DetalleVentaService {
 
   constructor(private http: HttpClient) { }
 
-  readonly productosURL = 'http://localhost:18132/api/TestProductoes'
-  readonly documentoURL = 'http://localhost:18132/api/TestClientes/Documento'
-  readonly facturaURL = "http://localhost:18132/api/TestFacturas"
-  readonly facturaDetallesURL = 'http://localhost:18132/api/TestFacturaDetalles'
+  readonly productosURL = 'http://localhost:18132/api/TestProductoes';
+  readonly documentoURL = 'http://localhost:18132/api/TestClientes/Documento';
+  readonly facturaURL = 'http://localhost:18132/api/TestFacturas';
+  readonly facturaDetallesURL = 'http://localhost:18132/api/TestFacturaDetalles';
   detalleProducto: DetalleProducto = new DetalleProducto();
   detalleVenta: DetalleVenta = new DetalleVenta();
   detalleCliente: DetalleCliente = new DetalleCliente();
@@ -70,10 +70,15 @@ export class DetalleVentaService {
 
   //función usada para agregar nuevo registro de factura en BD
   generarVenta(){
+    this.getCliente(); //se llama al cliente para que traiga el id
+
     this.facturaVenta = new FacturaVenta();
     this.facturaVenta.IdCliente = this.detalleCliente.IdCliente;
-    //this.facturaVenta.FechaVenta = this.fechaActual;
+    this.facturaVenta.FechaVenta = new Date();
     this.facturaVenta.ValorTotal = this.valorTotal;
+    this.facturaVenta.IdClienteNavigation=this.detalleCliente;
+    //console.log(this.facturaVenta.FechaVenta.getDate)
+    console.log('detalle cliente=' + this.detalleCliente.IdCliente.toString)
 
     //despues de llenar los campos se registra la factura
     return this.http.post(this.facturaURL, this.facturaVenta)

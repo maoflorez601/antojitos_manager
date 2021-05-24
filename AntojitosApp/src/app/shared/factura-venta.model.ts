@@ -1,6 +1,9 @@
+import { DetalleCliente } from "./detalle-cliente.model";
+
 export class FacturaVenta {
     IdFactura:number=0;
     IdCliente:number=0;
-    FechaVenta:string='2020-05-24';
+    FechaVenta:Date=new Date();
     ValorTotal:number=0;
+    IdClienteNavigation:DetalleCliente=new DetalleCliente();
 }
